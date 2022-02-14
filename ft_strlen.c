@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: piboidin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: piboidin <piboidin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 11:52:04 by piboidin          #+#    #+#             */
-/*   Updated: 2022/02/04 11:52:06 by piboidin         ###   ########.fr       */
+/*   Created: 2021/10/07 11:31:37 by piboidin          #+#    #+#             */
+/*   Updated: 2021/10/07 11:31:38 by piboidin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	main(int argc, char **argv)
+size_t	ft_strlen(const char *s)
 {
-	s_fdf	*data;
-
-	(void)argc;
-	write(1, "data\n", 5);
-	data = (s_fdf *)malloc(sizeof(s_fdf));
-	if (!data)
+	if (*s == '\0')
 		return (0);
-	write(1, "Je sors de data\n", 16);
-	ft_file_reader(argv[1], data);
-	return (0);
+	return (ft_strlen(s + 1) + 1);
 }

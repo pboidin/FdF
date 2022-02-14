@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: piboidin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: piboidin <piboidin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 11:52:04 by piboidin          #+#    #+#             */
-/*   Updated: 2022/02/04 11:52:06 by piboidin         ###   ########.fr       */
+/*   Created: 2021/10/07 11:30:54 by piboidin          #+#    #+#             */
+/*   Updated: 2021/10/07 11:30:54 by piboidin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	main(int argc, char **argv)
+char	*ft_strdup(const char *s1)
 {
-	s_fdf	*data;
+	char	*str;
+	int		i;
+	int		len;
 
-	(void)argc;
-	write(1, "data\n", 5);
-	data = (s_fdf *)malloc(sizeof(s_fdf));
-	if (!data)
-		return (0);
-	write(1, "Je sors de data\n", 16);
-	ft_file_reader(argv[1], data);
-	return (0);
+	len = 0;
+	while (s1[len])
+		len++;
+	str = (char *)malloc(sizeof(*str) * len + 1);
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
