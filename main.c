@@ -5,13 +5,13 @@ static void	ft_init_mlx(t_fdf *file)
 	file->mlx = mlx_init();
 	if (!file->mlx)
 		ft_error_exit("Connection failed", NULL);
-	file->mlx = mlx_new_window(file->mlx,
+	file->win = mlx_new_window(file->mlx,
 			file->win_width, file->win_hight, "fdf");
 	if (!file->win)
 		ft_exit_failed(file, "Could not create window");
 	file->img.img = mlx_new_image(file->mlx, file->win_width, file->win_hight);
 	if (!file->img.img)
-		ft_exit_failed(file, "Coulld not create image");
+		ft_exit_failed(file, "Could not create image");
 	file->img.addr = mlx_get_data_addr(file->img.img,
 			&file->img.bpp, &file->img.len, &file->img.end);
 }
@@ -38,8 +38,11 @@ static void	ft_struct_init(t_fdf *file)
 	file->img.addr = NULL;
 	file->mlx = NULL;
 	file->win = NULL;
+	write(1, "J'arrive sur le map_read !\n", 27);
 	ft_map_reader(file);
+	write(1, "Je passe le map_reader !\n", 24);
 	ft_init_mlx(file);
+	write(1, "Je passe le checker !\n", 22);
 	ft_init_map(file);
 }
 
@@ -72,11 +75,11 @@ int	main(int argc, char **argv)
 	t_fdf	file;
 
 	ft_checker(&file, argc, argv);
-	write(1, "Checker fonctionne\n", 19);
+	write(1, "Je passe le checker !\n", 22);
 	ft_struct_init(&file);
-	write(1, "Struct init fonctionne\n", 24);
+	write(1, "Je passe le structu !\n", 22);
 	ft_draw(&file);
-	write(1, "Draw fonctionne\n", 16);
+	write(1, "Je passe le drawing !\n", 22);
 	mlx_hook(file.win, KEY_PRESS, KEY_PRESS_MASK, &ft_key_press, &file);
 	mlx_hook(file.win, WIN_DSTRY, WIN_DSTRY_MASK, &ft_exit_successful, &file);
 	mlx_loop(file.mlx);

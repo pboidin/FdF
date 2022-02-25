@@ -1,6 +1,6 @@
 #include "fdf.h"
 
-bool	ft_bounds_err(t_fdf *file, t_point curr)
+bool	ft_bounds_error(t_fdf *file, t_point curr)
 {
 	return (curr.y < 0 || curr.x < 0
 		|| curr.y > file->win_hight - 1 || curr.x > file->win_width - 1);

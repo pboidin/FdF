@@ -67,24 +67,32 @@ void	ft_map_reader(t_fdf *file)
 {
 	t_gnl	gnl;
 
+	write(1, "J'entre dans le map_reader!\n", 28);
 	gnl.line = NULL;
 	gnl.fd = ft_open_file(file, file->filemap);
 	gnl.ret = ft_gnl(gnl.fd, &gnl.line);
-	if (gnl.ret == 1)
+	write(1, "Je passe!\n", 10);
+	if (gnl.ret == -1)
 		ft_close(file, gnl.fd, gnl.line, "Memory allocation error");
+	write(1, "Je passe le if!\n", 16);
 	while (gnl.ret)
 	{
+		write(1, "J'arrive sur le checker\n", 24);
 		ft_values_checker(file, gnl);
+		write(1, "Je passe le checker_value\n", 26);
 		file->ord_count++;
+		write(1, "J'arrive au if!\n", 16);
 		if (file->abs_count != 0
 			&& file->abs_count != ft_abs_counter(file, gnl.fd, gnl.line))
 			ft_close(file, gnl.fd, gnl.line, "Invalid map widths");
 		file->abs_count = ft_abs_counter(file, gnl.fd, gnl.line);
+		write(1, "J'arrive au ft_free\n", 20);
 		ft_free(gnl.line);
 		gnl.ret = ft_gnl(gnl.fd, &gnl.line);
 		if (gnl.ret == -1)
 			ft_close(file, gnl.fd, gnl.line, "Memory error");
 	}
+	write(1, "Je passe le while!\n", 19);
 	ft_free(gnl.line);
 	close(gnl.fd);
 }

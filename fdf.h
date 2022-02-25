@@ -1,8 +1,9 @@
 #ifndef FDF_H
 # define FDF_H
 
-# include "./minilibx_macos/mlx.h"
+# include "./minilibx_linux/mlx.h"
 # include "fdf_key_macros.h"
+# include <stdint.h>
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
