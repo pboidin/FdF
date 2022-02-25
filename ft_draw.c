@@ -17,7 +17,7 @@ void	ft_draw(t_fdf *file)
 	t_point	step;
 
 	step.y = 0;
-	while (step.x < file->abs_count)
+	while (step.y < file->ord_count)
 	{
 		step.x = 0;
 		while (step.x < file->abs_count)
