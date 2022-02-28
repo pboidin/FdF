@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_exit.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: piboidin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/28 15:37:35 by piboidin          #+#    #+#             */
+/*   Updated: 2022/02/28 15:37:37 by piboidin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fdf.h"
-//#include link for minilibx
 
 static void	ft_free_mem(t_fdf *file)
 {
@@ -36,5 +47,5 @@ void	ft_close(t_fdf *file, int fd, char *line, char *err_msg)
 {
 	close(fd);
 	ft_free_mem(file);
-	ft_error_exit(err_msg, line);
+	ft_error_exit(line, err_msg);
 }

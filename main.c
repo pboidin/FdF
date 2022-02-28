@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: piboidin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/28 15:39:03 by piboidin          #+#    #+#             */
+/*   Updated: 2022/02/28 15:39:05 by piboidin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fdf.h"
 
 static void	ft_init_mlx(t_fdf *file)
@@ -38,11 +50,8 @@ static void	ft_struct_init(t_fdf *file)
 	file->img.addr = NULL;
 	file->mlx = NULL;
 	file->win = NULL;
-	write(1, "J'arrive sur le map_read !\n", 27);
 	ft_map_reader(file);
-	write(1, "Je passe le map_reader !\n", 24);
 	ft_init_mlx(file);
-	write(1, "Je passe le checker !\n", 22);
 	ft_init_map(file);
 }
 
@@ -75,11 +84,8 @@ int	main(int argc, char **argv)
 	t_fdf	file;
 
 	ft_checker(&file, argc, argv);
-	write(1, "Je passe le checker !\n", 22);
 	ft_struct_init(&file);
-	write(1, "Je passe le structu !\n", 22);
 	ft_draw(&file);
-	write(1, "Je passe le drawing !\n", 22);
 	mlx_hook(file.win, KEY_PRESS, KEY_PRESS_MASK, &ft_key_press, &file);
 	mlx_hook(file.win, WIN_DSTRY, WIN_DSTRY_MASK, &ft_exit_successful, &file);
 	mlx_loop(file.mlx);

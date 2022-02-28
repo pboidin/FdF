@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_map_reader.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: piboidin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/28 15:37:51 by piboidin          #+#    #+#             */
+/*   Updated: 2022/02/28 15:37:52 by piboidin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fdf.h"
 
 int	ft_open_file(t_fdf *file, char *name)
@@ -18,7 +30,7 @@ static void	ft_values_checker(t_fdf *file, t_gnl gnl)
 	i = 0;
 	while (gnl.line[i])
 	{
-		while (gnl.line[i] && ft_isspace(gnl.line[i]))
+		while (ft_isspace(gnl.line[i]) && gnl.line[i])
 			i++;
 		cmp = ft_itoa(ft_atoi(&gnl.line[i]));
 		if (!cmp)
