@@ -6,14 +6,14 @@
 /*   By: piboidin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 15:36:36 by piboidin          #+#    #+#             */
-/*   Updated: 2022/02/28 15:36:41 by piboidin         ###   ########.fr       */
+/*   Updated: 2022/03/01 14:34:53 by piboidin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 
-# include "./minilibx_linux/mlx.h"
+# include "../libraries/minilibx-linux/mlx.h"
 # include "fdf_key_macros.h"
 # include <stdint.h>
 # include <stdlib.h>

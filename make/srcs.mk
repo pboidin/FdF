@@ -1,0 +1,16 @@
+SRCS_SOURCES += srcs/ft_utils_5.c
+SRCS_SOURCES += srcs/ft_exit.c
+SRCS_SOURCES += srcs/ft_utils.c
+SRCS_SOURCES += srcs/main.c
+SRCS_SOURCES += srcs/ft_bresenham_3.c
+SRCS_SOURCES += srcs/ft_utils_4.c
+SRCS_SOURCES += srcs/ft_map_reader.c
+SRCS_SOURCES += srcs/ft_draw.c
+SRCS_SOURCES += srcs/get_next_line.c
+SRCS_SOURCES += srcs/ft_bresenham_2.c
+SRCS_SOURCES += srcs/ft_mapper.c
+SRCS_SOURCES += srcs/ft_utils_2.c
+SRCS_SOURCES += srcs/ft_color.c
+SRCS_SOURCES += srcs/ft_utils_6.c
+SRCS_SOURCES += srcs/ft_bresenham.c
+SRCS_SOURCES += srcs/ft_utils_3.c
